@@ -19,10 +19,13 @@ class ImageDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: ReusableCachedNetworkImage(
-              fit: BoxFit.fill,
-              width: double.infinity,
-              imageUrl: '${imageModel!.url}',
+            child: Hero(
+              tag: imageModel!.id.toString(),
+              child: ReusableCachedNetworkImage(
+                fit: BoxFit.fill,
+                width: double.infinity,
+                imageUrl: '${imageModel!.url}',
+              ),
             ),
           ),
           const SizedBox(height: 50.0,),
